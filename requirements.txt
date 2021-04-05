@@ -1,0 +1,8 @@
+# use dependencies defined in setup.py
+.
+
+# dependencies for streamlit app
+pandas==1.2.3
+streamlit==0.79.0
+plotly==4.14.3
+pillow==8.1.2

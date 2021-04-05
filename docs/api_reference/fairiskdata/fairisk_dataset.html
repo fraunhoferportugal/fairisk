@@ -1,0 +1,2536 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.1" />
+<title>fairiskdata.fairisk_dataset API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>fairiskdata.fairisk_dataset</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import json
+from fairiskdata.sources.single_dataset import ALL_DATASETS_LIST, fetch_and_export
+from typing import List, Tuple, Union
+import datetime
+import pandas as pd
+from os import path
+import numbers
+import math
+from collections.abc import Iterable
+
+from fairiskdata.utils.age_parsers import safe_parse_age_group, do_ranges_overlap
+from fairiskdata.utils.time_parsers import safe_date_parse, safe_sortable_date_parse, safe_interval_parse
+from fairiskdata.preprocessing.resampling import Resampler
+from fairiskdata.preprocessing.age_resampling import AgeResampler
+from fairiskdata.preprocessing.normalizers import Normalizers
+from fairiskdata.modelling.excess_mortality import ExcessMortality
+
+import logging
+logging.getLogger(&#39;fairisk&#39;).addHandler(logging.NullHandler())
+logger = logging.getLogger(&#39;fairisk&#39;)
+
+class FAIRiskDataset:
+    &#34;&#34;&#34;
+    The main class of this package. It should be created by invoking the `fairisk_dataset.FAIRiskDataset.load` static
+    method.
+    &#34;&#34;&#34;
+
+    def __init__(self, dataset=None) -&gt; None:
+        super().__init__()
+        self.dataset = dataset
+        self._age_groups_granularity = None
+        self.indicatorsNormalized = False
+        self.scoresNormalized = False
+
+    @staticmethod
+    def load(json_file_path=&#34;output/fairisk_dataset.json&#34;, datasets_list=ALL_DATASETS_LIST, force_fetch=False):
+        &#34;&#34;&#34;
+        Load the dataset. If json file does not exist locally, all datasets will be downloaded.
+
+        Arguments:
+                    json_file_path {`str`} -- specifies the location to store the cached json file including the datasets
+                    that were fetched. (default: &#34;output/fairisk_dataset.json&#34;)
+
+                    datasets_list {`List[str]`} -- there is a list of all datasets which are downloaded by default.
+                    A different list may be selected (see sources.single_dataset). Only used if fetch from sources occurs.
+
+                    force_fetch {&#39;bool&#39;} -- if True, forces fetch from sources and overwrites json file if it exists.
+                    (default: False)
+
+        Returns:
+            `FAIRiskDataset` -- an instance of the FAIRiskDataset with loaded information
+        &#34;&#34;&#34;
+        if (not path.exists(json_file_path)) or force_fetch:
+            fetch_and_export(json_file_path=json_file_path, datasets_list=datasets_list)
+
+        with open(json_file_path) as f:
+            dataset = json.load(f)
+            for categories in dataset.values():
+                for attributes in categories.values():
+                    for attribute in attributes.values():
+                        if &#39;VALUE&#39; in attribute and isinstance(attribute[&#39;VALUE&#39;], dict):
+                            attribute[&#39;VALUE&#39;] = pd.Series(attribute[&#39;VALUE&#39;])
+
+            return FAIRiskDataset(dataset)
+
+    # GETTERS
+    def get(self):
+        return self.dataset
+
+    def get_interval(self):
+        &#34;&#34;&#34;
+        Defines the current interval represented in the dataset (considering all time series).
+
+        Returns:
+            `pandas.Interval` -- a pandas interval limited by the oldest and most recent dates available in the dataset.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        start, end = datetime.datetime.max, datetime.datetime.min
+        open_start, open_end = False, False
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_val in category_val.values():
+                    if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                        t0 = safe_date_parse(attribute_val[&#39;VALUE&#39;].index[0])
+                        tf = safe_date_parse(attribute_val[&#39;VALUE&#39;].index[-1])
+                        open_t0 = False
+                        open_tf = False
+
+                        if isinstance(t0, pd.Interval):
+                            open_t0 = t0.open_left
+                            open_tf = tf.open_right
+                            t0 = t0.left
+                            tf = tf.right
+
+                        open_start = open_t0 if t0 &lt; start else open_start
+                        start = t0 if t0 &lt; start else start
+
+                        open_end = open_tf if tf &gt; end else open_end
+                        end = tf if tf &gt; end else end
+
+        if open_start and open_end:
+            closed_str = &#39;neither&#39;
+        elif open_start:
+            closed_str = &#39;right&#39;
+        elif open_end:
+            closed_str = &#39;left&#39;
+        else:
+            closed_str = &#39;both&#39;
+
+        return pd.Interval(start, end, closed=closed_str)
+
+    def get_countries(self):
+        &#34;&#34;&#34;
+        Returns the list of countries available on the loaded dataset
+
+        Returns:
+            `list` -- the list of countries
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        return list(self.dataset.keys())
+
+    def get_categories(self, countries: Union[str, List[str], None] = None):
+        &#34;&#34;&#34;
+        Returns the list of categories by country
+
+        Arguments:
+            countries {str | List[str]} -- specifies a country or list of countries that will be filtered.
+
+        Returns:
+            `list[tuple]` -- a list of tuples with (country, category)
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        if countries is not None and not isinstance(countries, list):
+            countries = [countries]
+
+        cat_list = []
+        for country, dataCategories in self.dataset.items():
+            if countries is None or country in countries:
+                for dataCategory in dataCategories.keys():
+                    cat_list.append((country, dataCategory))
+        return cat_list
+
+    def get_attributes(self, countries: Union[str, List[str], None] = None, categories: Union[str, List[str], None] = None):
+        &#34;&#34;&#34;
+        Returns a list of attributes by country and category
+
+        Arguments:
+            countries {str | List[str]} -- specifies a country or list of countries that will be filtered.
+            categories {str | List[str]} -- specifies a category or list of category that will be filtered.
+
+        Returns:
+            `list[tuple]` -- a list of tuples of (country, category, attribute)
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        if countries is not None and not isinstance(countries, list):
+            countries = [countries]
+        if categories is not None and not isinstance(categories, list):
+            categories = [categories]
+
+        attrs_list = []
+        for country, dataCategories in self.dataset.items():
+            if countries is None or country in countries:
+                for dataCategory, datasetCategoryEntries in dataCategories.items():
+                    if categories is None or dataCategory in categories:
+                        for parameter in datasetCategoryEntries.keys():
+                            attrs_list.append((country, dataCategory, parameter))
+        return attrs_list
+
+    # FILTERS
+    def filter_countries(self, countries: Union[str, List[str]]):
+        &#34;&#34;&#34;
+        Filters the data of the specified countries. The method changes the underlying data.
+
+        Arguments:
+                    countries {str | List[str]} -- specifies the country or list of countries that will be filtered.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if not isinstance(countries, list):
+            countries = [countries]
+
+        del_countries = []
+        for country in list(self.dataset.keys()):
+            if country not in countries:
+                del self.dataset[country]
+                del_countries.append(country)
+
+        logger.debug(f&#39;{del_countries} countries erased from the dataset.&#39;)
+        logger.info(f&#39;{len(del_countries)} countries erased from the dataset.&#39;)
+
+        return self
+
+    def filter_categories(self, categories: Union[str, List[str]]):
+        &#34;&#34;&#34;
+        Filters the specified categories. The method changes the underlying data.
+
+        Arguments:
+                    categories {str | List[str]} -- specifies the category or list of categories that will be filtered.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if not isinstance(categories, list):
+            categories = [categories]
+
+        for country_val in self.dataset.values():
+
+            for category in list(country_val.keys()):
+                if category not in categories:
+                    country_val[category] = dict()
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_attributes(self, attributes: Union[Tuple[str, str], List[Tuple[str, str]]]):
+        &#34;&#34;&#34;
+        Filters the data of the specified attributes. The method changes the underlying data.
+
+        Arguments:
+                    attributes {Tuple[str,str] | List[Tuple[str,str]]} -- specifies the attribute or list of attributes that will be filtered.
+                    Each attribute is a tuple of a category and the attribute name.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if not isinstance(attributes, list):
+            attributes = [attributes]
+
+        for country_val in self.dataset.values():
+            for category_key, category_val in country_val.items():
+                for attribute in list(category_val.keys()):
+                    if not any(attr for cat, attr in attributes if cat == category_key and attribute == attr):
+                        del category_val[attribute]
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_time_interval(self, time_interval: Union[pd.Interval, pd.Period]):
+        &#34;&#34;&#34;
+        Filters the data by time interval. Non time-like data is maintained. The method changes the underlying data.
+
+        Arguments:
+                    time_interval {pd.Interval | pd.Period} -- specifies the interval or period for which data will be filtered.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if isinstance(time_interval, pd.Period):
+            time_interval = pd.Interval(
+                time_interval.start_time, time_interval.end_time, closed=&#39;both&#39;)
+        time_interval = safe_interval_parse(time_interval)
+
+        def time_interval_validation(parsed):
+            if parsed is None or (isinstance(parsed, numbers.Number) and math.isnan(parsed)):
+                return False
+
+            # year range like: 1984-2018
+            if isinstance(parsed, pd.Interval):
+                return time_interval.overlaps(parsed)
+
+            return parsed in time_interval
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_val in category_val.values():
+                    if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                        parsed = attribute_val[&#39;VALUE&#39;].index.to_series().map(
+                            safe_date_parse).map(time_interval_validation)
+                        attribute_val[&#39;VALUE&#39;] = attribute_val[&#39;VALUE&#39;][parsed == True]
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_age_group(self, age_group: Tuple[Union[int, None], Union[int, None]]):
+        &#34;&#34;&#34;
+        Filters the data of the specified age group. Data not pertaining age related information is maintained. The method changes the underlying data.
+
+        Arguments:
+                    age_group {Tuple[int | None, int | None]} -- specifies the age group for which data will be filtered. The None value represents an open interval.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_key in list(category_val.keys()):
+                    parsed = safe_parse_age_group(attribute_key)
+                    if parsed is not None and not do_ranges_overlap(parsed, age_group):
+                        del category_val[attribute_key]
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_countries_with_missing_values_on_attributes(self, attr_missing_values_country_filter: Union[Tuple[str, str], List[Tuple[str, str]]]):
+        &#34;&#34;&#34;
+        Filters the data for countries that have missing values on any of the specified attributes. The method changes the underlying data.
+
+        Arguments:
+                    attr_missing_values_country_filter {Tuple[str,str] | List[Tuple[str,str]]} -- specifies the list of attributes for which countries will be filtered. Each tuple represents a pair of category and attribute.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+
+        # filter normalization and sanity check
+        if not isinstance(attr_missing_values_country_filter, list):
+            attr_missing_values_country_filter = [attr_missing_values_country_filter]
+
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        for country_key, country_val in list(self.dataset.items()):
+            if not all(category in country_val and
+                       attr in country_val[category] and not
+                       self._attr_has_missing_values(
+                           country_val[category][attr])
+                       for category, attr in attr_missing_values_country_filter):
+                logger.warning(&#39;%s has been erased as it contained missing values on at least one of the selected &#39;
+                                &#39;attributes.&#39; % country_key)
+                del self.dataset[country_key]
+
+        return self
+
+    def filter_countries_missing_value_attributes_below(self, attr_count_missing_values_country_filter: int):
+        &#34;&#34;&#34;
+        Filters the data for countries that have missing values for a number attributes below the specified value. The method changes the underlying data.
+
+        Arguments:
+                    attr_count_missing_values_country_filter {int} -- specifies a number of attributes for which all country data will be removed whose number of attributes with missing values is above this value (countries with values below this number are maintained).
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        all_attrs = {(category, attribute) for categories in self.dataset.values(
+        ) for category, category_vals in categories.items() for attribute in category_vals.keys()}
+
+        def country_surpasses_missing_values_attributes(country_val):
+            count = 0
+            for category, attr in all_attrs:
+                if category not in country_val or (
+                    not attr in country_val[category]) or (
+                        self._attr_has_missing_values(country_val[category][attr])):
+                    count += 1
+                    if count &gt; attr_count_missing_values_country_filter:
+                        return True
+
+            return False
+
+        for country_key, country_val in list(self.dataset.items()):
+            if country_surpasses_missing_values_attributes(country_val):
+                logger.warning(&#39;%s has be erased as it contained more than %d missing attributes.&#39; % (
+                    country_key, attr_count_missing_values_country_filter))
+                del self.dataset[country_key]
+
+        return self
+
+    def filter_attributes_with_countries_nan_below(self, country_count_missing_values_attribute_filter: int):
+        &#34;&#34;&#34;
+        Filters the attributes whose number of countries with missing values is below the specified value. The method changes the underlying data.
+
+        Arguments:
+                    country_count_missing_values_attribute_filter {int} -- specifies the number of countries for which attributes will be removed if the number of countries with missing values for that attribute is above (attributes with values below this number are maintained).
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(
+                &#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        all_attrs = {(category, attribute) for categories in self.dataset.values(
+        ) for category, category_vals in categories.items() for attribute in category_vals.keys()}
+
+        def number_of_countries_with_missing_values(attribute):
+            category, attr = attribute
+            count = 0
+
+            for country_val in self.dataset.values():
+                if category not in country_val or (
+                    not attr in country_val[category]) or (
+                        self._attr_has_missing_values(country_val[category][attr])):
+                    count += 1
+
+            return count
+
+        attributes_to_remove = [attribute for attribute in all_attrs if number_of_countries_with_missing_values(
+            attribute) &gt; country_count_missing_values_attribute_filter]
+
+        logger.debug(
+            f&#39;Removing {len(attributes_to_remove)} for having a number of countries with missing values above {country_count_missing_values_attribute_filter}&#39;)
+
+        for country_val in self.dataset.values():
+            for category, attr in attributes_to_remove:
+                if category in country_val and attr in country_val[category]:
+                    del country_val[category][attr]
+
+        return self
+
+    # RESAMPLERS
+    def resample(self,
+                 frequency: str = &#39;WEEKLY&#39;):
+        &#34;&#34;&#34;
+        Resamples all time series of categories Mortality, COVID and Mobility in a consistent way. The method changes the underlying data.
+
+        Arguments:
+                    frequency {str} -- specifies the target frequency for all time series. Should be one of:
+
+                    * &#39;DAILY&#39;: time series data organized in days (dd-mm-yyyy)
+                    * &#39;WEEKLY&#39;: time series data organized in weeks (yyyyWww)
+                    * &#39;MONTHLY&#39;: time series data organized in months (mm-yyyy)
+                    * &#39;YEARLY&#39;: time series data organized in years (yyyy)
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        time_interval = self.get_interval()
+
+        resampler = Resampler(time_interval, frequency)
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_val in category_val.values():
+                    if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                        if attribute_val[&#39;FREQUENCY&#39;] != &#39;UNDEFINED&#39;:
+                            attribute_val[&#39;VALUE&#39;] = resampler.resample(attribute_val[&#39;VALUE&#39;],
+                                                                        attribute_val[&#39;FREQUENCY&#39;],
+                                                                        attribute_val[&#39;SERIES_TYPE&#39;])
+                            attribute_val[&#39;FREQUENCY&#39;] = frequency
+
+        return self
+
+    def resample_age_groups(self,
+                            granularity: str = &#39;HIGH&#39;):
+        &#34;&#34;&#34;
+        Resamples all time series of categories Demographic and Mortality into new age groups. The method changes the underlying data.
+
+        Arguments:
+                    granularity {str} -- specifies the target age granularity for all time series. Should be one of:
+
+                    * &#39;LOW&#39;: time series data organized into a single age group (Total)
+                    * &#39;MEDIUM&#39;: time series data organized into three age groups (-14, 15-64, 65+)
+                    * &#39;HIGH&#39;: time series data organized into five age groups (-14, 15-64, 65-74, 75-84, 85+)
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        if self._age_groups_granularity == granularity:
+            return self
+
+        if (self._age_groups_granularity is None) or (self._age_groups_granularity == &#39;HIGH&#39;) or \
+                (self._age_groups_granularity == &#39;MEDIUM&#39; and granularity == &#39;LOW&#39;):
+
+            for country_val in self.dataset.values():
+
+                for category_name, category_val in country_val.items():
+                    if category_name in [&#39;DEMOGRAPHIC&#39;, &#39;MORTALITY&#39;]:
+                        # Each resampler will deal with one category
+                        age_resampler = AgeResampler(granularity)
+                        country_val[category_name] = age_resampler.resample(category_val)
+
+            self.dataset = self._clean_empty_entries(self.dataset)
+            self._age_groups_granularity = granularity
+
+        else:
+            logger.warning(&#34;Cannot increase age groups granularity (CURRENT: %s | RESAMPLING TO: %s). &#34;
+                            &#34;Please consider reloading the dataset and redoing this operation.&#34;
+                            % (self._age_groups_granularity, granularity))
+
+        return self
+
+    def normalize_scores(self):
+        &#34;&#34;&#34;
+        Normalizes all values of the &#34;SCORES&#34; subgroup using the MinMax strategy.
+
+        Returns:
+            `FAIRiskDataset`.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        if not self.scoresNormalized:
+            self.dataset = Normalizers().min_max_scaler_scores(self.dataset)
+            self.scoresNormalized = True
+
+        else:
+            logging.warning(&#39;SCORES were already normalized. No action performed.&#39;)
+            return self
+
+        return self
+
+    def normalize_indicators(self):
+        &#34;&#34;&#34;
+        Normalizes all values of the &#34;INDICATORS&#34; subgroup using the MinMax strategy.
+
+        Returns:
+            `FAIRiskDataset`.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        if not self.indicatorsNormalized:
+            self.dataset = Normalizers().min_max_scaler_indicators(self.dataset)
+            self.indicatorsNormalized = True
+
+        else:
+            logging.warning(&#39;INDICATORS were already normalized. No action performed.&#39;)
+            return self
+
+        return self
+
+    # EXCESS MORTALITY
+    def add_excess_mortality_estimation(self,
+                                        age_resampling_granularity: str = &#39;HIGH&#39;,
+                                        time_interval: Union[pd.Interval, pd.Period] =
+                                        pd.Interval(pd.Timestamp(&#39;01-01-2020&#39;), pd.Timestamp(&#39;31-12-2021&#39;))):
+
+        &#34;&#34;&#34;
+        Compute and add excess mortality estimation (P-score, Absolute) to MORTALITY category of FAIRiskDataset.
+        This step requires resampling of DEMOGRAPHICS and MORTALITY age groups to a fixed granularity (see
+        FAIRiskDataset.resample_age_groups).
+
+        Arguments:
+                    age_resampling_granularity {str} -- specifies target granularity for age groups resampling. Should
+                    be one of:
+
+                    * &#39;LOW&#39;: Total
+                    * &#39;MEDIUM&#39;: 0-14y, 15-64y, 65+y
+                    * &#39;HIGH&#39;: 0-14y, 15-64y, 65-74y, 75-84y, 85+y (default)
+
+                    time_interval {pd.Interval | pd.Period} -- specifies the time interval for which excess mortality
+                    should be calculated.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if isinstance(time_interval, pd.Period):
+            time_interval = pd.Interval(
+                time_interval.start_time, time_interval.end_time, closed=&#39;both&#39;)
+        time_interval = safe_interval_parse(time_interval)
+
+        self.resample_age_groups(age_resampling_granularity)
+
+        e = ExcessMortality()
+        for country_name, country_val in self.dataset.items():
+            if &#39;MORTALITY&#39; in country_val.keys():
+                country_val[&#39;MORTALITY&#39;] = e.compute_and_add_to_mortality_dict(country_val[&#39;MORTALITY&#39;],
+                                                                               time_interval=time_interval)
+            else:
+                logger.warning(
+                    &#39;Not possible to compute excess mortality for %s. Missing MORTALITY category.&#39; % country_name)
+
+        return self
+
+    # EXPORTERS
+    def export(self, type: str = &#39;parameters&#39;, column_separator=&#39;:&#39;):
+        &#34;&#34;&#34;
+        Exports the dataset as a dataframe.
+
+        Arguments:
+                type {`str`} -- Specifies the type of data that should be exported. A different format will be used for each type,
+                these are the possible values:
+
+                * &#39;parameters&#39;: excludes timeseries data (default)
+                * &#39;timeseries&#39;: exports timeseries data
+                * &#39;all&#39;: exports all data
+
+        Returns:
+            `pandas.DataFrame` -- a pandas Dataframe with selected information.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        if type == &#39;parameters&#39;:
+            return pd.DataFrame([
+                {
+                    &#39;country&#39;: country,
+                    **{
+                        column_separator.join(
+                            [category, attribute, attribute_key])
+                        if len(attribute_val[&#39;VALUE&#39;]) &gt; 1
+                        else column_separator.join([category, attribute]): value
+                        for category, category_val in country_val.items()
+                        for attribute, attribute_val in category_val.items()
+                        if &#39;FREQUENCY&#39; not in attribute_val
+                        for attribute_key, value in attribute_val[&#39;VALUE&#39;].items()
+                    }
+                }
+                for country, country_val in self.dataset.items()
+            ])
+        elif type == &#34;all&#34;:
+            return pd.DataFrame([
+                {
+                    &#39;country&#39;: country,
+                    &#39;category&#39;: category,
+                    &#39;attribute&#39;: attribute,
+                    **{k: v for k, v in attribute_val.items() if k != &#39;VALUE&#39;},
+                    &#39;key&#39;: attribute_key,
+                    &#39;value&#39;: value
+                }
+                for country, country_val in self.dataset.items()
+                for category, category_val in country_val.items()
+                for attribute, attribute_val in category_val.items()
+                for attribute_key, value in attribute_val[&#39;VALUE&#39;].items()
+            ])
+        elif type == &#34;timeseries&#34;:
+            # get all different timestamp keys
+            all_timestamps = {attribute_key
+                              for country_val in self.dataset.values()
+                              for category_val in country_val.values()
+                              for attribute_val in category_val.values()
+                              if &#39;FREQUENCY&#39; in attribute_val
+                              for attribute_key in attribute_val[&#39;VALUE&#39;].keys()}
+            return pd.DataFrame([
+                {
+                    &#39;country&#39;: country,
+                    &#39;timestamp&#39;: timestamp,
+                    &#39;parsed_timestamp&#39;: safe_sortable_date_parse(timestamp),
+                    **{
+                        column_separator.join(
+                            [category, attribute]): attribute_val[&#39;VALUE&#39;][timestamp]
+                        for category, category_val in country_val.items()
+                        for attribute, attribute_val in category_val.items()
+                        if &#39;FREQUENCY&#39; in attribute_val and timestamp in attribute_val[&#39;VALUE&#39;].keys()
+                    }
+                }
+                for timestamp in all_timestamps
+                for country, country_val in self.dataset.items()
+            ]).sort_values(&#39;parsed_timestamp&#39;)
+
+    # HELPERS
+    @staticmethod
+    def _attr_has_missing_values(attribute):
+        if attribute is None or not &#39;VALUE&#39; in attribute or attribute[&#39;VALUE&#39;] is None:
+            return True
+
+        if isinstance(attribute[&#39;VALUE&#39;], pd.Series):
+            return attribute[&#39;VALUE&#39;].isna().values.any()
+
+        if isinstance(attribute[&#39;VALUE&#39;], dict):
+            return not all(v is not None and (
+                not isinstance(v, numbers.Number) or
+                not math.isnan(v)
+            ) for _, v in attribute[&#39;VALUE&#39;].items())
+
+        if isinstance(attribute[&#39;VALUE&#39;], Iterable):
+            return not all(x is not None and (
+                not isinstance(x, numbers.Number) or
+                not math.isnan(x)
+            ) for x in attribute[&#39;VALUE&#39;])
+
+        return False
+
+    @staticmethod
+    def _clean_empty_entries(dataset: dict):
+        country_empty = []
+        for country, country_dict in dataset.items():
+            empty = []
+
+            for category, category_dict in country_dict.items():
+
+                # Check if attribute exists but is empty (None is there for safety)
+                empty_att = []
+                for att, att_dict in category_dict.items():
+                    if att_dict[&#39;VALUE&#39;] is None or len(att_dict[&#39;VALUE&#39;]) == 0:
+                        empty_att += [att]
+                category_dict = {
+                    att: val for att, val in category_dict.items() if att not in empty_att}
+
+                if not category_dict:
+                    empty += [category]
+
+            if empty:
+                dataset[country] = {
+                    cat: val for cat, val in country_dict.items() if cat not in empty}
+                if dataset[country]:
+                    logger.warning(&#39;%s no longer has %s data.&#39; %
+                                  (country, &#34;, &#34;.join(empty)))
+                else:
+                    country_empty += [country]
+                    logger.warning(
+                        &#39;%s has been erased as it no longer had data.&#39; % country)
+
+        return {country: val for country, val in dataset.items() if country not in country_empty}</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset"><code class="flex name class">
+<span>class <span class="ident">FAIRiskDataset</span></span>
+<span>(</span><span>dataset=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The main class of this package. It should be created by invoking the <code>fairisk_dataset.FAIRiskDataset.load</code> static
+method.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FAIRiskDataset:
+    &#34;&#34;&#34;
+    The main class of this package. It should be created by invoking the `fairisk_dataset.FAIRiskDataset.load` static
+    method.
+    &#34;&#34;&#34;
+
+    def __init__(self, dataset=None) -&gt; None:
+        super().__init__()
+        self.dataset = dataset
+        self._age_groups_granularity = None
+        self.indicatorsNormalized = False
+        self.scoresNormalized = False
+
+    @staticmethod
+    def load(json_file_path=&#34;output/fairisk_dataset.json&#34;, datasets_list=ALL_DATASETS_LIST, force_fetch=False):
+        &#34;&#34;&#34;
+        Load the dataset. If json file does not exist locally, all datasets will be downloaded.
+
+        Arguments:
+                    json_file_path {`str`} -- specifies the location to store the cached json file including the datasets
+                    that were fetched. (default: &#34;output/fairisk_dataset.json&#34;)
+
+                    datasets_list {`List[str]`} -- there is a list of all datasets which are downloaded by default.
+                    A different list may be selected (see sources.single_dataset). Only used if fetch from sources occurs.
+
+                    force_fetch {&#39;bool&#39;} -- if True, forces fetch from sources and overwrites json file if it exists.
+                    (default: False)
+
+        Returns:
+            `FAIRiskDataset` -- an instance of the FAIRiskDataset with loaded information
+        &#34;&#34;&#34;
+        if (not path.exists(json_file_path)) or force_fetch:
+            fetch_and_export(json_file_path=json_file_path, datasets_list=datasets_list)
+
+        with open(json_file_path) as f:
+            dataset = json.load(f)
+            for categories in dataset.values():
+                for attributes in categories.values():
+                    for attribute in attributes.values():
+                        if &#39;VALUE&#39; in attribute and isinstance(attribute[&#39;VALUE&#39;], dict):
+                            attribute[&#39;VALUE&#39;] = pd.Series(attribute[&#39;VALUE&#39;])
+
+            return FAIRiskDataset(dataset)
+
+    # GETTERS
+    def get(self):
+        return self.dataset
+
+    def get_interval(self):
+        &#34;&#34;&#34;
+        Defines the current interval represented in the dataset (considering all time series).
+
+        Returns:
+            `pandas.Interval` -- a pandas interval limited by the oldest and most recent dates available in the dataset.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        start, end = datetime.datetime.max, datetime.datetime.min
+        open_start, open_end = False, False
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_val in category_val.values():
+                    if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                        t0 = safe_date_parse(attribute_val[&#39;VALUE&#39;].index[0])
+                        tf = safe_date_parse(attribute_val[&#39;VALUE&#39;].index[-1])
+                        open_t0 = False
+                        open_tf = False
+
+                        if isinstance(t0, pd.Interval):
+                            open_t0 = t0.open_left
+                            open_tf = tf.open_right
+                            t0 = t0.left
+                            tf = tf.right
+
+                        open_start = open_t0 if t0 &lt; start else open_start
+                        start = t0 if t0 &lt; start else start
+
+                        open_end = open_tf if tf &gt; end else open_end
+                        end = tf if tf &gt; end else end
+
+        if open_start and open_end:
+            closed_str = &#39;neither&#39;
+        elif open_start:
+            closed_str = &#39;right&#39;
+        elif open_end:
+            closed_str = &#39;left&#39;
+        else:
+            closed_str = &#39;both&#39;
+
+        return pd.Interval(start, end, closed=closed_str)
+
+    def get_countries(self):
+        &#34;&#34;&#34;
+        Returns the list of countries available on the loaded dataset
+
+        Returns:
+            `list` -- the list of countries
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        return list(self.dataset.keys())
+
+    def get_categories(self, countries: Union[str, List[str], None] = None):
+        &#34;&#34;&#34;
+        Returns the list of categories by country
+
+        Arguments:
+            countries {str | List[str]} -- specifies a country or list of countries that will be filtered.
+
+        Returns:
+            `list[tuple]` -- a list of tuples with (country, category)
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        if countries is not None and not isinstance(countries, list):
+            countries = [countries]
+
+        cat_list = []
+        for country, dataCategories in self.dataset.items():
+            if countries is None or country in countries:
+                for dataCategory in dataCategories.keys():
+                    cat_list.append((country, dataCategory))
+        return cat_list
+
+    def get_attributes(self, countries: Union[str, List[str], None] = None, categories: Union[str, List[str], None] = None):
+        &#34;&#34;&#34;
+        Returns a list of attributes by country and category
+
+        Arguments:
+            countries {str | List[str]} -- specifies a country or list of countries that will be filtered.
+            categories {str | List[str]} -- specifies a category or list of category that will be filtered.
+
+        Returns:
+            `list[tuple]` -- a list of tuples of (country, category, attribute)
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        if countries is not None and not isinstance(countries, list):
+            countries = [countries]
+        if categories is not None and not isinstance(categories, list):
+            categories = [categories]
+
+        attrs_list = []
+        for country, dataCategories in self.dataset.items():
+            if countries is None or country in countries:
+                for dataCategory, datasetCategoryEntries in dataCategories.items():
+                    if categories is None or dataCategory in categories:
+                        for parameter in datasetCategoryEntries.keys():
+                            attrs_list.append((country, dataCategory, parameter))
+        return attrs_list
+
+    # FILTERS
+    def filter_countries(self, countries: Union[str, List[str]]):
+        &#34;&#34;&#34;
+        Filters the data of the specified countries. The method changes the underlying data.
+
+        Arguments:
+                    countries {str | List[str]} -- specifies the country or list of countries that will be filtered.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if not isinstance(countries, list):
+            countries = [countries]
+
+        del_countries = []
+        for country in list(self.dataset.keys()):
+            if country not in countries:
+                del self.dataset[country]
+                del_countries.append(country)
+
+        logger.debug(f&#39;{del_countries} countries erased from the dataset.&#39;)
+        logger.info(f&#39;{len(del_countries)} countries erased from the dataset.&#39;)
+
+        return self
+
+    def filter_categories(self, categories: Union[str, List[str]]):
+        &#34;&#34;&#34;
+        Filters the specified categories. The method changes the underlying data.
+
+        Arguments:
+                    categories {str | List[str]} -- specifies the category or list of categories that will be filtered.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if not isinstance(categories, list):
+            categories = [categories]
+
+        for country_val in self.dataset.values():
+
+            for category in list(country_val.keys()):
+                if category not in categories:
+                    country_val[category] = dict()
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_attributes(self, attributes: Union[Tuple[str, str], List[Tuple[str, str]]]):
+        &#34;&#34;&#34;
+        Filters the data of the specified attributes. The method changes the underlying data.
+
+        Arguments:
+                    attributes {Tuple[str,str] | List[Tuple[str,str]]} -- specifies the attribute or list of attributes that will be filtered.
+                    Each attribute is a tuple of a category and the attribute name.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if not isinstance(attributes, list):
+            attributes = [attributes]
+
+        for country_val in self.dataset.values():
+            for category_key, category_val in country_val.items():
+                for attribute in list(category_val.keys()):
+                    if not any(attr for cat, attr in attributes if cat == category_key and attribute == attr):
+                        del category_val[attribute]
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_time_interval(self, time_interval: Union[pd.Interval, pd.Period]):
+        &#34;&#34;&#34;
+        Filters the data by time interval. Non time-like data is maintained. The method changes the underlying data.
+
+        Arguments:
+                    time_interval {pd.Interval | pd.Period} -- specifies the interval or period for which data will be filtered.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if isinstance(time_interval, pd.Period):
+            time_interval = pd.Interval(
+                time_interval.start_time, time_interval.end_time, closed=&#39;both&#39;)
+        time_interval = safe_interval_parse(time_interval)
+
+        def time_interval_validation(parsed):
+            if parsed is None or (isinstance(parsed, numbers.Number) and math.isnan(parsed)):
+                return False
+
+            # year range like: 1984-2018
+            if isinstance(parsed, pd.Interval):
+                return time_interval.overlaps(parsed)
+
+            return parsed in time_interval
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_val in category_val.values():
+                    if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                        parsed = attribute_val[&#39;VALUE&#39;].index.to_series().map(
+                            safe_date_parse).map(time_interval_validation)
+                        attribute_val[&#39;VALUE&#39;] = attribute_val[&#39;VALUE&#39;][parsed == True]
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_age_group(self, age_group: Tuple[Union[int, None], Union[int, None]]):
+        &#34;&#34;&#34;
+        Filters the data of the specified age group. Data not pertaining age related information is maintained. The method changes the underlying data.
+
+        Arguments:
+                    age_group {Tuple[int | None, int | None]} -- specifies the age group for which data will be filtered. The None value represents an open interval.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_key in list(category_val.keys()):
+                    parsed = safe_parse_age_group(attribute_key)
+                    if parsed is not None and not do_ranges_overlap(parsed, age_group):
+                        del category_val[attribute_key]
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+
+        return self
+
+    def filter_countries_with_missing_values_on_attributes(self, attr_missing_values_country_filter: Union[Tuple[str, str], List[Tuple[str, str]]]):
+        &#34;&#34;&#34;
+        Filters the data for countries that have missing values on any of the specified attributes. The method changes the underlying data.
+
+        Arguments:
+                    attr_missing_values_country_filter {Tuple[str,str] | List[Tuple[str,str]]} -- specifies the list of attributes for which countries will be filtered. Each tuple represents a pair of category and attribute.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+
+        # filter normalization and sanity check
+        if not isinstance(attr_missing_values_country_filter, list):
+            attr_missing_values_country_filter = [attr_missing_values_country_filter]
+
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        for country_key, country_val in list(self.dataset.items()):
+            if not all(category in country_val and
+                       attr in country_val[category] and not
+                       self._attr_has_missing_values(
+                           country_val[category][attr])
+                       for category, attr in attr_missing_values_country_filter):
+                logger.warning(&#39;%s has been erased as it contained missing values on at least one of the selected &#39;
+                                &#39;attributes.&#39; % country_key)
+                del self.dataset[country_key]
+
+        return self
+
+    def filter_countries_missing_value_attributes_below(self, attr_count_missing_values_country_filter: int):
+        &#34;&#34;&#34;
+        Filters the data for countries that have missing values for a number attributes below the specified value. The method changes the underlying data.
+
+        Arguments:
+                    attr_count_missing_values_country_filter {int} -- specifies a number of attributes for which all country data will be removed whose number of attributes with missing values is above this value (countries with values below this number are maintained).
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        all_attrs = {(category, attribute) for categories in self.dataset.values(
+        ) for category, category_vals in categories.items() for attribute in category_vals.keys()}
+
+        def country_surpasses_missing_values_attributes(country_val):
+            count = 0
+            for category, attr in all_attrs:
+                if category not in country_val or (
+                    not attr in country_val[category]) or (
+                        self._attr_has_missing_values(country_val[category][attr])):
+                    count += 1
+                    if count &gt; attr_count_missing_values_country_filter:
+                        return True
+
+            return False
+
+        for country_key, country_val in list(self.dataset.items()):
+            if country_surpasses_missing_values_attributes(country_val):
+                logger.warning(&#39;%s has be erased as it contained more than %d missing attributes.&#39; % (
+                    country_key, attr_count_missing_values_country_filter))
+                del self.dataset[country_key]
+
+        return self
+
+    def filter_attributes_with_countries_nan_below(self, country_count_missing_values_attribute_filter: int):
+        &#34;&#34;&#34;
+        Filters the attributes whose number of countries with missing values is below the specified value. The method changes the underlying data.
+
+        Arguments:
+                    country_count_missing_values_attribute_filter {int} -- specifies the number of countries for which attributes will be removed if the number of countries with missing values for that attribute is above (attributes with values below this number are maintained).
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(
+                &#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        all_attrs = {(category, attribute) for categories in self.dataset.values(
+        ) for category, category_vals in categories.items() for attribute in category_vals.keys()}
+
+        def number_of_countries_with_missing_values(attribute):
+            category, attr = attribute
+            count = 0
+
+            for country_val in self.dataset.values():
+                if category not in country_val or (
+                    not attr in country_val[category]) or (
+                        self._attr_has_missing_values(country_val[category][attr])):
+                    count += 1
+
+            return count
+
+        attributes_to_remove = [attribute for attribute in all_attrs if number_of_countries_with_missing_values(
+            attribute) &gt; country_count_missing_values_attribute_filter]
+
+        logger.debug(
+            f&#39;Removing {len(attributes_to_remove)} for having a number of countries with missing values above {country_count_missing_values_attribute_filter}&#39;)
+
+        for country_val in self.dataset.values():
+            for category, attr in attributes_to_remove:
+                if category in country_val and attr in country_val[category]:
+                    del country_val[category][attr]
+
+        return self
+
+    # RESAMPLERS
+    def resample(self,
+                 frequency: str = &#39;WEEKLY&#39;):
+        &#34;&#34;&#34;
+        Resamples all time series of categories Mortality, COVID and Mobility in a consistent way. The method changes the underlying data.
+
+        Arguments:
+                    frequency {str} -- specifies the target frequency for all time series. Should be one of:
+
+                    * &#39;DAILY&#39;: time series data organized in days (dd-mm-yyyy)
+                    * &#39;WEEKLY&#39;: time series data organized in weeks (yyyyWww)
+                    * &#39;MONTHLY&#39;: time series data organized in months (mm-yyyy)
+                    * &#39;YEARLY&#39;: time series data organized in years (yyyy)
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        time_interval = self.get_interval()
+
+        resampler = Resampler(time_interval, frequency)
+
+        for country_val in self.dataset.values():
+            for category_val in country_val.values():
+                for attribute_val in category_val.values():
+                    if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                        if attribute_val[&#39;FREQUENCY&#39;] != &#39;UNDEFINED&#39;:
+                            attribute_val[&#39;VALUE&#39;] = resampler.resample(attribute_val[&#39;VALUE&#39;],
+                                                                        attribute_val[&#39;FREQUENCY&#39;],
+                                                                        attribute_val[&#39;SERIES_TYPE&#39;])
+                            attribute_val[&#39;FREQUENCY&#39;] = frequency
+
+        return self
+
+    def resample_age_groups(self,
+                            granularity: str = &#39;HIGH&#39;):
+        &#34;&#34;&#34;
+        Resamples all time series of categories Demographic and Mortality into new age groups. The method changes the underlying data.
+
+        Arguments:
+                    granularity {str} -- specifies the target age granularity for all time series. Should be one of:
+
+                    * &#39;LOW&#39;: time series data organized into a single age group (Total)
+                    * &#39;MEDIUM&#39;: time series data organized into three age groups (-14, 15-64, 65+)
+                    * &#39;HIGH&#39;: time series data organized into five age groups (-14, 15-64, 65-74, 75-84, 85+)
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        if self._age_groups_granularity == granularity:
+            return self
+
+        if (self._age_groups_granularity is None) or (self._age_groups_granularity == &#39;HIGH&#39;) or \
+                (self._age_groups_granularity == &#39;MEDIUM&#39; and granularity == &#39;LOW&#39;):
+
+            for country_val in self.dataset.values():
+
+                for category_name, category_val in country_val.items():
+                    if category_name in [&#39;DEMOGRAPHIC&#39;, &#39;MORTALITY&#39;]:
+                        # Each resampler will deal with one category
+                        age_resampler = AgeResampler(granularity)
+                        country_val[category_name] = age_resampler.resample(category_val)
+
+            self.dataset = self._clean_empty_entries(self.dataset)
+            self._age_groups_granularity = granularity
+
+        else:
+            logger.warning(&#34;Cannot increase age groups granularity (CURRENT: %s | RESAMPLING TO: %s). &#34;
+                            &#34;Please consider reloading the dataset and redoing this operation.&#34;
+                            % (self._age_groups_granularity, granularity))
+
+        return self
+
+    def normalize_scores(self):
+        &#34;&#34;&#34;
+        Normalizes all values of the &#34;SCORES&#34; subgroup using the MinMax strategy.
+
+        Returns:
+            `FAIRiskDataset`.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        if not self.scoresNormalized:
+            self.dataset = Normalizers().min_max_scaler_scores(self.dataset)
+            self.scoresNormalized = True
+
+        else:
+            logging.warning(&#39;SCORES were already normalized. No action performed.&#39;)
+            return self
+
+        return self
+
+    def normalize_indicators(self):
+        &#34;&#34;&#34;
+        Normalizes all values of the &#34;INDICATORS&#34; subgroup using the MinMax strategy.
+
+        Returns:
+            `FAIRiskDataset`.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        if not self.indicatorsNormalized:
+            self.dataset = Normalizers().min_max_scaler_indicators(self.dataset)
+            self.indicatorsNormalized = True
+
+        else:
+            logging.warning(&#39;INDICATORS were already normalized. No action performed.&#39;)
+            return self
+
+        return self
+
+    # EXCESS MORTALITY
+    def add_excess_mortality_estimation(self,
+                                        age_resampling_granularity: str = &#39;HIGH&#39;,
+                                        time_interval: Union[pd.Interval, pd.Period] =
+                                        pd.Interval(pd.Timestamp(&#39;01-01-2020&#39;), pd.Timestamp(&#39;31-12-2021&#39;))):
+
+        &#34;&#34;&#34;
+        Compute and add excess mortality estimation (P-score, Absolute) to MORTALITY category of FAIRiskDataset.
+        This step requires resampling of DEMOGRAPHICS and MORTALITY age groups to a fixed granularity (see
+        FAIRiskDataset.resample_age_groups).
+
+        Arguments:
+                    age_resampling_granularity {str} -- specifies target granularity for age groups resampling. Should
+                    be one of:
+
+                    * &#39;LOW&#39;: Total
+                    * &#39;MEDIUM&#39;: 0-14y, 15-64y, 65+y
+                    * &#39;HIGH&#39;: 0-14y, 15-64y, 65-74y, 75-84y, 85+y (default)
+
+                    time_interval {pd.Interval | pd.Period} -- specifies the time interval for which excess mortality
+                    should be calculated.
+
+        Returns:
+            `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return self
+
+        # filter normalization and sanity check
+        if isinstance(time_interval, pd.Period):
+            time_interval = pd.Interval(
+                time_interval.start_time, time_interval.end_time, closed=&#39;both&#39;)
+        time_interval = safe_interval_parse(time_interval)
+
+        self.resample_age_groups(age_resampling_granularity)
+
+        e = ExcessMortality()
+        for country_name, country_val in self.dataset.items():
+            if &#39;MORTALITY&#39; in country_val.keys():
+                country_val[&#39;MORTALITY&#39;] = e.compute_and_add_to_mortality_dict(country_val[&#39;MORTALITY&#39;],
+                                                                               time_interval=time_interval)
+            else:
+                logger.warning(
+                    &#39;Not possible to compute excess mortality for %s. Missing MORTALITY category.&#39; % country_name)
+
+        return self
+
+    # EXPORTERS
+    def export(self, type: str = &#39;parameters&#39;, column_separator=&#39;:&#39;):
+        &#34;&#34;&#34;
+        Exports the dataset as a dataframe.
+
+        Arguments:
+                type {`str`} -- Specifies the type of data that should be exported. A different format will be used for each type,
+                these are the possible values:
+
+                * &#39;parameters&#39;: excludes timeseries data (default)
+                * &#39;timeseries&#39;: exports timeseries data
+                * &#39;all&#39;: exports all data
+
+        Returns:
+            `pandas.DataFrame` -- a pandas Dataframe with selected information.
+        &#34;&#34;&#34;
+        if not self.dataset:
+            logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+            return None
+
+        if type == &#39;parameters&#39;:
+            return pd.DataFrame([
+                {
+                    &#39;country&#39;: country,
+                    **{
+                        column_separator.join(
+                            [category, attribute, attribute_key])
+                        if len(attribute_val[&#39;VALUE&#39;]) &gt; 1
+                        else column_separator.join([category, attribute]): value
+                        for category, category_val in country_val.items()
+                        for attribute, attribute_val in category_val.items()
+                        if &#39;FREQUENCY&#39; not in attribute_val
+                        for attribute_key, value in attribute_val[&#39;VALUE&#39;].items()
+                    }
+                }
+                for country, country_val in self.dataset.items()
+            ])
+        elif type == &#34;all&#34;:
+            return pd.DataFrame([
+                {
+                    &#39;country&#39;: country,
+                    &#39;category&#39;: category,
+                    &#39;attribute&#39;: attribute,
+                    **{k: v for k, v in attribute_val.items() if k != &#39;VALUE&#39;},
+                    &#39;key&#39;: attribute_key,
+                    &#39;value&#39;: value
+                }
+                for country, country_val in self.dataset.items()
+                for category, category_val in country_val.items()
+                for attribute, attribute_val in category_val.items()
+                for attribute_key, value in attribute_val[&#39;VALUE&#39;].items()
+            ])
+        elif type == &#34;timeseries&#34;:
+            # get all different timestamp keys
+            all_timestamps = {attribute_key
+                              for country_val in self.dataset.values()
+                              for category_val in country_val.values()
+                              for attribute_val in category_val.values()
+                              if &#39;FREQUENCY&#39; in attribute_val
+                              for attribute_key in attribute_val[&#39;VALUE&#39;].keys()}
+            return pd.DataFrame([
+                {
+                    &#39;country&#39;: country,
+                    &#39;timestamp&#39;: timestamp,
+                    &#39;parsed_timestamp&#39;: safe_sortable_date_parse(timestamp),
+                    **{
+                        column_separator.join(
+                            [category, attribute]): attribute_val[&#39;VALUE&#39;][timestamp]
+                        for category, category_val in country_val.items()
+                        for attribute, attribute_val in category_val.items()
+                        if &#39;FREQUENCY&#39; in attribute_val and timestamp in attribute_val[&#39;VALUE&#39;].keys()
+                    }
+                }
+                for timestamp in all_timestamps
+                for country, country_val in self.dataset.items()
+            ]).sort_values(&#39;parsed_timestamp&#39;)
+
+    # HELPERS
+    @staticmethod
+    def _attr_has_missing_values(attribute):
+        if attribute is None or not &#39;VALUE&#39; in attribute or attribute[&#39;VALUE&#39;] is None:
+            return True
+
+        if isinstance(attribute[&#39;VALUE&#39;], pd.Series):
+            return attribute[&#39;VALUE&#39;].isna().values.any()
+
+        if isinstance(attribute[&#39;VALUE&#39;], dict):
+            return not all(v is not None and (
+                not isinstance(v, numbers.Number) or
+                not math.isnan(v)
+            ) for _, v in attribute[&#39;VALUE&#39;].items())
+
+        if isinstance(attribute[&#39;VALUE&#39;], Iterable):
+            return not all(x is not None and (
+                not isinstance(x, numbers.Number) or
+                not math.isnan(x)
+            ) for x in attribute[&#39;VALUE&#39;])
+
+        return False
+
+    @staticmethod
+    def _clean_empty_entries(dataset: dict):
+        country_empty = []
+        for country, country_dict in dataset.items():
+            empty = []
+
+            for category, category_dict in country_dict.items():
+
+                # Check if attribute exists but is empty (None is there for safety)
+                empty_att = []
+                for att, att_dict in category_dict.items():
+                    if att_dict[&#39;VALUE&#39;] is None or len(att_dict[&#39;VALUE&#39;]) == 0:
+                        empty_att += [att]
+                category_dict = {
+                    att: val for att, val in category_dict.items() if att not in empty_att}
+
+                if not category_dict:
+                    empty += [category]
+
+            if empty:
+                dataset[country] = {
+                    cat: val for cat, val in country_dict.items() if cat not in empty}
+                if dataset[country]:
+                    logger.warning(&#39;%s no longer has %s data.&#39; %
+                                  (country, &#34;, &#34;.join(empty)))
+                else:
+                    country_empty += [country]
+                    logger.warning(
+                        &#39;%s has been erased as it no longer had data.&#39; % country)
+
+        return {country: val for country, val in dataset.items() if country not in country_empty}</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.load"><code class="name flex">
+<span>def <span class="ident">load</span></span>(<span>json_file_path='output/fairisk_dataset.json', datasets_list=['COVID', 'EUROSTAT_DEMOGRAPHIC', 'EUROSTAT_MORTALITY', 'GHO', 'INFORM', 'MOBILITY', 'MORTALITY'], force_fetch=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load the dataset. If json file does not exist locally, all datasets will be downloaded.</p>
+<h2 id="arguments">Arguments</h2>
+<p>json_file_path {<code>str</code>} &ndash; specifies the location to store the cached json file including the datasets
+that were fetched. (default: "output/fairisk_dataset.json")</p>
+<p>datasets_list {<code>List[str]</code>} &ndash; there is a list of all datasets which are downloaded by default.
+A different list may be selected (see sources.single_dataset). Only used if fetch from sources occurs.</p>
+<p>force_fetch {'bool'} &ndash; if True, forces fetch from sources and overwrites json file if it exists.
+(default: False)</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; an instance of the FAIRiskDataset with loaded information</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def load(json_file_path=&#34;output/fairisk_dataset.json&#34;, datasets_list=ALL_DATASETS_LIST, force_fetch=False):
+    &#34;&#34;&#34;
+    Load the dataset. If json file does not exist locally, all datasets will be downloaded.
+
+    Arguments:
+                json_file_path {`str`} -- specifies the location to store the cached json file including the datasets
+                that were fetched. (default: &#34;output/fairisk_dataset.json&#34;)
+
+                datasets_list {`List[str]`} -- there is a list of all datasets which are downloaded by default.
+                A different list may be selected (see sources.single_dataset). Only used if fetch from sources occurs.
+
+                force_fetch {&#39;bool&#39;} -- if True, forces fetch from sources and overwrites json file if it exists.
+                (default: False)
+
+    Returns:
+        `FAIRiskDataset` -- an instance of the FAIRiskDataset with loaded information
+    &#34;&#34;&#34;
+    if (not path.exists(json_file_path)) or force_fetch:
+        fetch_and_export(json_file_path=json_file_path, datasets_list=datasets_list)
+
+    with open(json_file_path) as f:
+        dataset = json.load(f)
+        for categories in dataset.values():
+            for attributes in categories.values():
+                for attribute in attributes.values():
+                    if &#39;VALUE&#39; in attribute and isinstance(attribute[&#39;VALUE&#39;], dict):
+                        attribute[&#39;VALUE&#39;] = pd.Series(attribute[&#39;VALUE&#39;])
+
+        return FAIRiskDataset(dataset)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.add_excess_mortality_estimation"><code class="name flex">
+<span>def <span class="ident">add_excess_mortality_estimation</span></span>(<span>self, age_resampling_granularity: str = 'HIGH', time_interval: Union[pandas._libs.interval.Interval, pandas._libs.tslibs.period.Period] = Interval('2020-01-01', '2021-12-31', closed='right'))</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute and add excess mortality estimation (P-score, Absolute) to MORTALITY category of FAIRiskDataset.
+This step requires resampling of DEMOGRAPHICS and MORTALITY age groups to a fixed granularity (see
+FAIRiskDataset.resample_age_groups).</p>
+<h2 id="arguments">Arguments</h2>
+<p>age_resampling_granularity {str} &ndash; specifies target granularity for age groups resampling. Should
+be one of:</p>
+<ul>
+<li>'LOW': Total</li>
+<li>'MEDIUM': 0-14y, 15-64y, 65+y</li>
+<li>'HIGH': 0-14y, 15-64y, 65-74y, 75-84y, 85+y (default)</li>
+</ul>
+<p>time_interval {pd.Interval | pd.Period} &ndash; specifies the time interval for which excess mortality
+should be calculated.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_excess_mortality_estimation(self,
+                                    age_resampling_granularity: str = &#39;HIGH&#39;,
+                                    time_interval: Union[pd.Interval, pd.Period] =
+                                    pd.Interval(pd.Timestamp(&#39;01-01-2020&#39;), pd.Timestamp(&#39;31-12-2021&#39;))):
+
+    &#34;&#34;&#34;
+    Compute and add excess mortality estimation (P-score, Absolute) to MORTALITY category of FAIRiskDataset.
+    This step requires resampling of DEMOGRAPHICS and MORTALITY age groups to a fixed granularity (see
+    FAIRiskDataset.resample_age_groups).
+
+    Arguments:
+                age_resampling_granularity {str} -- specifies target granularity for age groups resampling. Should
+                be one of:
+
+                * &#39;LOW&#39;: Total
+                * &#39;MEDIUM&#39;: 0-14y, 15-64y, 65+y
+                * &#39;HIGH&#39;: 0-14y, 15-64y, 65-74y, 75-84y, 85+y (default)
+
+                time_interval {pd.Interval | pd.Period} -- specifies the time interval for which excess mortality
+                should be calculated.
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    # filter normalization and sanity check
+    if isinstance(time_interval, pd.Period):
+        time_interval = pd.Interval(
+            time_interval.start_time, time_interval.end_time, closed=&#39;both&#39;)
+    time_interval = safe_interval_parse(time_interval)
+
+    self.resample_age_groups(age_resampling_granularity)
+
+    e = ExcessMortality()
+    for country_name, country_val in self.dataset.items():
+        if &#39;MORTALITY&#39; in country_val.keys():
+            country_val[&#39;MORTALITY&#39;] = e.compute_and_add_to_mortality_dict(country_val[&#39;MORTALITY&#39;],
+                                                                           time_interval=time_interval)
+        else:
+            logger.warning(
+                &#39;Not possible to compute excess mortality for %s. Missing MORTALITY category.&#39; % country_name)
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.export"><code class="name flex">
+<span>def <span class="ident">export</span></span>(<span>self, type: str = 'parameters', column_separator=':')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Exports the dataset as a dataframe.</p>
+<h2 id="arguments">Arguments</h2>
+<p>type {<code>str</code>} &ndash; Specifies the type of data that should be exported. A different format will be used for each type,
+these are the possible values:</p>
+<ul>
+<li>'parameters': excludes timeseries data (default)</li>
+<li>'timeseries': exports timeseries data</li>
+<li>'all': exports all data</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<p><code>pandas.DataFrame</code> &ndash; a pandas Dataframe with selected information.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def export(self, type: str = &#39;parameters&#39;, column_separator=&#39;:&#39;):
+    &#34;&#34;&#34;
+    Exports the dataset as a dataframe.
+
+    Arguments:
+            type {`str`} -- Specifies the type of data that should be exported. A different format will be used for each type,
+            these are the possible values:
+
+            * &#39;parameters&#39;: excludes timeseries data (default)
+            * &#39;timeseries&#39;: exports timeseries data
+            * &#39;all&#39;: exports all data
+
+    Returns:
+        `pandas.DataFrame` -- a pandas Dataframe with selected information.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return None
+
+    if type == &#39;parameters&#39;:
+        return pd.DataFrame([
+            {
+                &#39;country&#39;: country,
+                **{
+                    column_separator.join(
+                        [category, attribute, attribute_key])
+                    if len(attribute_val[&#39;VALUE&#39;]) &gt; 1
+                    else column_separator.join([category, attribute]): value
+                    for category, category_val in country_val.items()
+                    for attribute, attribute_val in category_val.items()
+                    if &#39;FREQUENCY&#39; not in attribute_val
+                    for attribute_key, value in attribute_val[&#39;VALUE&#39;].items()
+                }
+            }
+            for country, country_val in self.dataset.items()
+        ])
+    elif type == &#34;all&#34;:
+        return pd.DataFrame([
+            {
+                &#39;country&#39;: country,
+                &#39;category&#39;: category,
+                &#39;attribute&#39;: attribute,
+                **{k: v for k, v in attribute_val.items() if k != &#39;VALUE&#39;},
+                &#39;key&#39;: attribute_key,
+                &#39;value&#39;: value
+            }
+            for country, country_val in self.dataset.items()
+            for category, category_val in country_val.items()
+            for attribute, attribute_val in category_val.items()
+            for attribute_key, value in attribute_val[&#39;VALUE&#39;].items()
+        ])
+    elif type == &#34;timeseries&#34;:
+        # get all different timestamp keys
+        all_timestamps = {attribute_key
+                          for country_val in self.dataset.values()
+                          for category_val in country_val.values()
+                          for attribute_val in category_val.values()
+                          if &#39;FREQUENCY&#39; in attribute_val
+                          for attribute_key in attribute_val[&#39;VALUE&#39;].keys()}
+        return pd.DataFrame([
+            {
+                &#39;country&#39;: country,
+                &#39;timestamp&#39;: timestamp,
+                &#39;parsed_timestamp&#39;: safe_sortable_date_parse(timestamp),
+                **{
+                    column_separator.join(
+                        [category, attribute]): attribute_val[&#39;VALUE&#39;][timestamp]
+                    for category, category_val in country_val.items()
+                    for attribute, attribute_val in category_val.items()
+                    if &#39;FREQUENCY&#39; in attribute_val and timestamp in attribute_val[&#39;VALUE&#39;].keys()
+                }
+            }
+            for timestamp in all_timestamps
+            for country, country_val in self.dataset.items()
+        ]).sort_values(&#39;parsed_timestamp&#39;)</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_age_group"><code class="name flex">
+<span>def <span class="ident">filter_age_group</span></span>(<span>self, age_group: Tuple[Union[int, NoneType], Union[int, NoneType]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the data of the specified age group. Data not pertaining age related information is maintained. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>age_group {Tuple[int | None, int | None]} &ndash; specifies the age group for which data will be filtered. The None value represents an open interval.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_age_group(self, age_group: Tuple[Union[int, None], Union[int, None]]):
+    &#34;&#34;&#34;
+    Filters the data of the specified age group. Data not pertaining age related information is maintained. The method changes the underlying data.
+
+    Arguments:
+                age_group {Tuple[int | None, int | None]} -- specifies the age group for which data will be filtered. The None value represents an open interval.
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    for country_val in self.dataset.values():
+        for category_val in country_val.values():
+            for attribute_key in list(category_val.keys()):
+                parsed = safe_parse_age_group(attribute_key)
+                if parsed is not None and not do_ranges_overlap(parsed, age_group):
+                    del category_val[attribute_key]
+
+    self.dataset = self._clean_empty_entries(self.dataset)
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_attributes"><code class="name flex">
+<span>def <span class="ident">filter_attributes</span></span>(<span>self, attributes: Union[Tuple[str, str], List[Tuple[str, str]]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the data of the specified attributes. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>attributes {Tuple[str,str] | List[Tuple[str,str]]} &ndash; specifies the attribute or list of attributes that will be filtered.
+Each attribute is a tuple of a category and the attribute name.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_attributes(self, attributes: Union[Tuple[str, str], List[Tuple[str, str]]]):
+    &#34;&#34;&#34;
+    Filters the data of the specified attributes. The method changes the underlying data.
+
+    Arguments:
+                attributes {Tuple[str,str] | List[Tuple[str,str]]} -- specifies the attribute or list of attributes that will be filtered.
+                Each attribute is a tuple of a category and the attribute name.
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    # filter normalization and sanity check
+    if not isinstance(attributes, list):
+        attributes = [attributes]
+
+    for country_val in self.dataset.values():
+        for category_key, category_val in country_val.items():
+            for attribute in list(category_val.keys()):
+                if not any(attr for cat, attr in attributes if cat == category_key and attribute == attr):
+                    del category_val[attribute]
+
+    self.dataset = self._clean_empty_entries(self.dataset)
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_attributes_with_countries_nan_below"><code class="name flex">
+<span>def <span class="ident">filter_attributes_with_countries_nan_below</span></span>(<span>self, country_count_missing_values_attribute_filter: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the attributes whose number of countries with missing values is below the specified value. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>country_count_missing_values_attribute_filter {int} &ndash; specifies the number of countries for which attributes will be removed if the number of countries with missing values for that attribute is above (attributes with values below this number are maintained).</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_attributes_with_countries_nan_below(self, country_count_missing_values_attribute_filter: int):
+    &#34;&#34;&#34;
+    Filters the attributes whose number of countries with missing values is below the specified value. The method changes the underlying data.
+
+    Arguments:
+                country_count_missing_values_attribute_filter {int} -- specifies the number of countries for which attributes will be removed if the number of countries with missing values for that attribute is above (attributes with values below this number are maintained).
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(
+            &#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    all_attrs = {(category, attribute) for categories in self.dataset.values(
+    ) for category, category_vals in categories.items() for attribute in category_vals.keys()}
+
+    def number_of_countries_with_missing_values(attribute):
+        category, attr = attribute
+        count = 0
+
+        for country_val in self.dataset.values():
+            if category not in country_val or (
+                not attr in country_val[category]) or (
+                    self._attr_has_missing_values(country_val[category][attr])):
+                count += 1
+
+        return count
+
+    attributes_to_remove = [attribute for attribute in all_attrs if number_of_countries_with_missing_values(
+        attribute) &gt; country_count_missing_values_attribute_filter]
+
+    logger.debug(
+        f&#39;Removing {len(attributes_to_remove)} for having a number of countries with missing values above {country_count_missing_values_attribute_filter}&#39;)
+
+    for country_val in self.dataset.values():
+        for category, attr in attributes_to_remove:
+            if category in country_val and attr in country_val[category]:
+                del country_val[category][attr]
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_categories"><code class="name flex">
+<span>def <span class="ident">filter_categories</span></span>(<span>self, categories: Union[str, List[str]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the specified categories. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>categories {str | List[str]} &ndash; specifies the category or list of categories that will be filtered.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_categories(self, categories: Union[str, List[str]]):
+    &#34;&#34;&#34;
+    Filters the specified categories. The method changes the underlying data.
+
+    Arguments:
+                categories {str | List[str]} -- specifies the category or list of categories that will be filtered.
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    # filter normalization and sanity check
+    if not isinstance(categories, list):
+        categories = [categories]
+
+    for country_val in self.dataset.values():
+
+        for category in list(country_val.keys()):
+            if category not in categories:
+                country_val[category] = dict()
+
+    self.dataset = self._clean_empty_entries(self.dataset)
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries"><code class="name flex">
+<span>def <span class="ident">filter_countries</span></span>(<span>self, countries: Union[str, List[str]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the data of the specified countries. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>countries {str | List[str]} &ndash; specifies the country or list of countries that will be filtered.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_countries(self, countries: Union[str, List[str]]):
+    &#34;&#34;&#34;
+    Filters the data of the specified countries. The method changes the underlying data.
+
+    Arguments:
+                countries {str | List[str]} -- specifies the country or list of countries that will be filtered.
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    # filter normalization and sanity check
+    if not isinstance(countries, list):
+        countries = [countries]
+
+    del_countries = []
+    for country in list(self.dataset.keys()):
+        if country not in countries:
+            del self.dataset[country]
+            del_countries.append(country)
+
+    logger.debug(f&#39;{del_countries} countries erased from the dataset.&#39;)
+    logger.info(f&#39;{len(del_countries)} countries erased from the dataset.&#39;)
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries_missing_value_attributes_below"><code class="name flex">
+<span>def <span class="ident">filter_countries_missing_value_attributes_below</span></span>(<span>self, attr_count_missing_values_country_filter: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the data for countries that have missing values for a number attributes below the specified value. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>attr_count_missing_values_country_filter {int} &ndash; specifies a number of attributes for which all country data will be removed whose number of attributes with missing values is above this value (countries with values below this number are maintained).</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_countries_missing_value_attributes_below(self, attr_count_missing_values_country_filter: int):
+    &#34;&#34;&#34;
+    Filters the data for countries that have missing values for a number attributes below the specified value. The method changes the underlying data.
+
+    Arguments:
+                attr_count_missing_values_country_filter {int} -- specifies a number of attributes for which all country data will be removed whose number of attributes with missing values is above this value (countries with values below this number are maintained).
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    all_attrs = {(category, attribute) for categories in self.dataset.values(
+    ) for category, category_vals in categories.items() for attribute in category_vals.keys()}
+
+    def country_surpasses_missing_values_attributes(country_val):
+        count = 0
+        for category, attr in all_attrs:
+            if category not in country_val or (
+                not attr in country_val[category]) or (
+                    self._attr_has_missing_values(country_val[category][attr])):
+                count += 1
+                if count &gt; attr_count_missing_values_country_filter:
+                    return True
+
+        return False
+
+    for country_key, country_val in list(self.dataset.items()):
+        if country_surpasses_missing_values_attributes(country_val):
+            logger.warning(&#39;%s has be erased as it contained more than %d missing attributes.&#39; % (
+                country_key, attr_count_missing_values_country_filter))
+            del self.dataset[country_key]
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries_with_missing_values_on_attributes"><code class="name flex">
+<span>def <span class="ident">filter_countries_with_missing_values_on_attributes</span></span>(<span>self, attr_missing_values_country_filter: Union[Tuple[str, str], List[Tuple[str, str]]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the data for countries that have missing values on any of the specified attributes. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>attr_missing_values_country_filter {Tuple[str,str] | List[Tuple[str,str]]} &ndash; specifies the list of attributes for which countries will be filtered. Each tuple represents a pair of category and attribute.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_countries_with_missing_values_on_attributes(self, attr_missing_values_country_filter: Union[Tuple[str, str], List[Tuple[str, str]]]):
+    &#34;&#34;&#34;
+    Filters the data for countries that have missing values on any of the specified attributes. The method changes the underlying data.
+
+    Arguments:
+                attr_missing_values_country_filter {Tuple[str,str] | List[Tuple[str,str]]} -- specifies the list of attributes for which countries will be filtered. Each tuple represents a pair of category and attribute.
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+
+    # filter normalization and sanity check
+    if not isinstance(attr_missing_values_country_filter, list):
+        attr_missing_values_country_filter = [attr_missing_values_country_filter]
+
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    for country_key, country_val in list(self.dataset.items()):
+        if not all(category in country_val and
+                   attr in country_val[category] and not
+                   self._attr_has_missing_values(
+                       country_val[category][attr])
+                   for category, attr in attr_missing_values_country_filter):
+            logger.warning(&#39;%s has been erased as it contained missing values on at least one of the selected &#39;
+                            &#39;attributes.&#39; % country_key)
+            del self.dataset[country_key]
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_time_interval"><code class="name flex">
+<span>def <span class="ident">filter_time_interval</span></span>(<span>self, time_interval: Union[pandas._libs.interval.Interval, pandas._libs.tslibs.period.Period])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Filters the data by time interval. Non time-like data is maintained. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>time_interval {pd.Interval | pd.Period} &ndash; specifies the interval or period for which data will be filtered.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_time_interval(self, time_interval: Union[pd.Interval, pd.Period]):
+    &#34;&#34;&#34;
+    Filters the data by time interval. Non time-like data is maintained. The method changes the underlying data.
+
+    Arguments:
+                time_interval {pd.Interval | pd.Period} -- specifies the interval or period for which data will be filtered.
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    # filter normalization and sanity check
+    if isinstance(time_interval, pd.Period):
+        time_interval = pd.Interval(
+            time_interval.start_time, time_interval.end_time, closed=&#39;both&#39;)
+    time_interval = safe_interval_parse(time_interval)
+
+    def time_interval_validation(parsed):
+        if parsed is None or (isinstance(parsed, numbers.Number) and math.isnan(parsed)):
+            return False
+
+        # year range like: 1984-2018
+        if isinstance(parsed, pd.Interval):
+            return time_interval.overlaps(parsed)
+
+        return parsed in time_interval
+
+    for country_val in self.dataset.values():
+        for category_val in country_val.values():
+            for attribute_val in category_val.values():
+                if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                    parsed = attribute_val[&#39;VALUE&#39;].index.to_series().map(
+                        safe_date_parse).map(time_interval_validation)
+                    attribute_val[&#39;VALUE&#39;] = attribute_val[&#39;VALUE&#39;][parsed == True]
+
+    self.dataset = self._clean_empty_entries(self.dataset)
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.get"><code class="name flex">
+<span>def <span class="ident">get</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get(self):
+    return self.dataset</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.get_attributes"><code class="name flex">
+<span>def <span class="ident">get_attributes</span></span>(<span>self, countries: Union[str, List[str], NoneType] = None, categories: Union[str, List[str], NoneType] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a list of attributes by country and category</p>
+<h2 id="arguments">Arguments</h2>
+<p>countries {str | List[str]} &ndash; specifies a country or list of countries that will be filtered.
+categories {str | List[str]} &ndash; specifies a category or list of category that will be filtered.</p>
+<h2 id="returns">Returns</h2>
+<p><code>list[tuple]</code> &ndash; a list of tuples of (country, category, attribute)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_attributes(self, countries: Union[str, List[str], None] = None, categories: Union[str, List[str], None] = None):
+    &#34;&#34;&#34;
+    Returns a list of attributes by country and category
+
+    Arguments:
+        countries {str | List[str]} -- specifies a country or list of countries that will be filtered.
+        categories {str | List[str]} -- specifies a category or list of category that will be filtered.
+
+    Returns:
+        `list[tuple]` -- a list of tuples of (country, category, attribute)
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return None
+
+    if countries is not None and not isinstance(countries, list):
+        countries = [countries]
+    if categories is not None and not isinstance(categories, list):
+        categories = [categories]
+
+    attrs_list = []
+    for country, dataCategories in self.dataset.items():
+        if countries is None or country in countries:
+            for dataCategory, datasetCategoryEntries in dataCategories.items():
+                if categories is None or dataCategory in categories:
+                    for parameter in datasetCategoryEntries.keys():
+                        attrs_list.append((country, dataCategory, parameter))
+    return attrs_list</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.get_categories"><code class="name flex">
+<span>def <span class="ident">get_categories</span></span>(<span>self, countries: Union[str, List[str], NoneType] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the list of categories by country</p>
+<h2 id="arguments">Arguments</h2>
+<p>countries {str | List[str]} &ndash; specifies a country or list of countries that will be filtered.</p>
+<h2 id="returns">Returns</h2>
+<p><code>list[tuple]</code> &ndash; a list of tuples with (country, category)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_categories(self, countries: Union[str, List[str], None] = None):
+    &#34;&#34;&#34;
+    Returns the list of categories by country
+
+    Arguments:
+        countries {str | List[str]} -- specifies a country or list of countries that will be filtered.
+
+    Returns:
+        `list[tuple]` -- a list of tuples with (country, category)
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return None
+
+    if countries is not None and not isinstance(countries, list):
+        countries = [countries]
+
+    cat_list = []
+    for country, dataCategories in self.dataset.items():
+        if countries is None or country in countries:
+            for dataCategory in dataCategories.keys():
+                cat_list.append((country, dataCategory))
+    return cat_list</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.get_countries"><code class="name flex">
+<span>def <span class="ident">get_countries</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the list of countries available on the loaded dataset</p>
+<h2 id="returns">Returns</h2>
+<p><code>list</code> &ndash; the list of countries</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_countries(self):
+    &#34;&#34;&#34;
+    Returns the list of countries available on the loaded dataset
+
+    Returns:
+        `list` -- the list of countries
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return None
+
+    return list(self.dataset.keys())</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.get_interval"><code class="name flex">
+<span>def <span class="ident">get_interval</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Defines the current interval represented in the dataset (considering all time series).</p>
+<h2 id="returns">Returns</h2>
+<p><code>pandas.Interval</code> &ndash; a pandas interval limited by the oldest and most recent dates available in the dataset.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_interval(self):
+    &#34;&#34;&#34;
+    Defines the current interval represented in the dataset (considering all time series).
+
+    Returns:
+        `pandas.Interval` -- a pandas interval limited by the oldest and most recent dates available in the dataset.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return None
+
+    start, end = datetime.datetime.max, datetime.datetime.min
+    open_start, open_end = False, False
+
+    for country_val in self.dataset.values():
+        for category_val in country_val.values():
+            for attribute_val in category_val.values():
+                if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                    t0 = safe_date_parse(attribute_val[&#39;VALUE&#39;].index[0])
+                    tf = safe_date_parse(attribute_val[&#39;VALUE&#39;].index[-1])
+                    open_t0 = False
+                    open_tf = False
+
+                    if isinstance(t0, pd.Interval):
+                        open_t0 = t0.open_left
+                        open_tf = tf.open_right
+                        t0 = t0.left
+                        tf = tf.right
+
+                    open_start = open_t0 if t0 &lt; start else open_start
+                    start = t0 if t0 &lt; start else start
+
+                    open_end = open_tf if tf &gt; end else open_end
+                    end = tf if tf &gt; end else end
+
+    if open_start and open_end:
+        closed_str = &#39;neither&#39;
+    elif open_start:
+        closed_str = &#39;right&#39;
+    elif open_end:
+        closed_str = &#39;left&#39;
+    else:
+        closed_str = &#39;both&#39;
+
+    return pd.Interval(start, end, closed=closed_str)</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.normalize_indicators"><code class="name flex">
+<span>def <span class="ident">normalize_indicators</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Normalizes all values of the "INDICATORS" subgroup using the MinMax strategy.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def normalize_indicators(self):
+    &#34;&#34;&#34;
+    Normalizes all values of the &#34;INDICATORS&#34; subgroup using the MinMax strategy.
+
+    Returns:
+        `FAIRiskDataset`.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    if not self.indicatorsNormalized:
+        self.dataset = Normalizers().min_max_scaler_indicators(self.dataset)
+        self.indicatorsNormalized = True
+
+    else:
+        logging.warning(&#39;INDICATORS were already normalized. No action performed.&#39;)
+        return self
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.normalize_scores"><code class="name flex">
+<span>def <span class="ident">normalize_scores</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Normalizes all values of the "SCORES" subgroup using the MinMax strategy.</p>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def normalize_scores(self):
+    &#34;&#34;&#34;
+    Normalizes all values of the &#34;SCORES&#34; subgroup using the MinMax strategy.
+
+    Returns:
+        `FAIRiskDataset`.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    if not self.scoresNormalized:
+        self.dataset = Normalizers().min_max_scaler_scores(self.dataset)
+        self.scoresNormalized = True
+
+    else:
+        logging.warning(&#39;SCORES were already normalized. No action performed.&#39;)
+        return self
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.resample"><code class="name flex">
+<span>def <span class="ident">resample</span></span>(<span>self, frequency: str = 'WEEKLY')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resamples all time series of categories Mortality, COVID and Mobility in a consistent way. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>frequency {str} &ndash; specifies the target frequency for all time series. Should be one of:</p>
+<ul>
+<li>'DAILY': time series data organized in days (dd-mm-yyyy)</li>
+<li>'WEEKLY': time series data organized in weeks (yyyyWww)</li>
+<li>'MONTHLY': time series data organized in months (mm-yyyy)</li>
+<li>'YEARLY': time series data organized in years (yyyy)</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resample(self,
+             frequency: str = &#39;WEEKLY&#39;):
+    &#34;&#34;&#34;
+    Resamples all time series of categories Mortality, COVID and Mobility in a consistent way. The method changes the underlying data.
+
+    Arguments:
+                frequency {str} -- specifies the target frequency for all time series. Should be one of:
+
+                * &#39;DAILY&#39;: time series data organized in days (dd-mm-yyyy)
+                * &#39;WEEKLY&#39;: time series data organized in weeks (yyyyWww)
+                * &#39;MONTHLY&#39;: time series data organized in months (mm-yyyy)
+                * &#39;YEARLY&#39;: time series data organized in years (yyyy)
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    time_interval = self.get_interval()
+
+    resampler = Resampler(time_interval, frequency)
+
+    for country_val in self.dataset.values():
+        for category_val in country_val.values():
+            for attribute_val in category_val.values():
+                if &#39;FREQUENCY&#39; in attribute_val:  # indicates it is a timeseries
+                    if attribute_val[&#39;FREQUENCY&#39;] != &#39;UNDEFINED&#39;:
+                        attribute_val[&#39;VALUE&#39;] = resampler.resample(attribute_val[&#39;VALUE&#39;],
+                                                                    attribute_val[&#39;FREQUENCY&#39;],
+                                                                    attribute_val[&#39;SERIES_TYPE&#39;])
+                        attribute_val[&#39;FREQUENCY&#39;] = frequency
+
+    return self</code></pre>
+</details>
+</dd>
+<dt id="fairiskdata.fairisk_dataset.FAIRiskDataset.resample_age_groups"><code class="name flex">
+<span>def <span class="ident">resample_age_groups</span></span>(<span>self, granularity: str = 'HIGH')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Resamples all time series of categories Demographic and Mortality into new age groups. The method changes the underlying data.</p>
+<h2 id="arguments">Arguments</h2>
+<p>granularity {str} &ndash; specifies the target age granularity for all time series. Should be one of:</p>
+<ul>
+<li>'LOW': time series data organized into a single age group (Total)</li>
+<li>'MEDIUM': time series data organized into three age groups (-14, 15-64, 65+)</li>
+<li>'HIGH': time series data organized into five age groups (-14, 15-64, 65-74, 75-84, 85+)</li>
+</ul>
+<h2 id="returns">Returns</h2>
+<p><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code> &ndash; returns self to allow multiple calls in chain.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def resample_age_groups(self,
+                        granularity: str = &#39;HIGH&#39;):
+    &#34;&#34;&#34;
+    Resamples all time series of categories Demographic and Mortality into new age groups. The method changes the underlying data.
+
+    Arguments:
+                granularity {str} -- specifies the target age granularity for all time series. Should be one of:
+
+                * &#39;LOW&#39;: time series data organized into a single age group (Total)
+                * &#39;MEDIUM&#39;: time series data organized into three age groups (-14, 15-64, 65+)
+                * &#39;HIGH&#39;: time series data organized into five age groups (-14, 15-64, 65-74, 75-84, 85+)
+
+    Returns:
+        `FAIRiskDataset` -- returns self to allow multiple calls in chain.
+    &#34;&#34;&#34;
+    if not self.dataset:
+        logger.warning(&#39;Dataset is empty. Please load and redo this operation.&#39;)
+        return self
+
+    if self._age_groups_granularity == granularity:
+        return self
+
+    if (self._age_groups_granularity is None) or (self._age_groups_granularity == &#39;HIGH&#39;) or \
+            (self._age_groups_granularity == &#39;MEDIUM&#39; and granularity == &#39;LOW&#39;):
+
+        for country_val in self.dataset.values():
+
+            for category_name, category_val in country_val.items():
+                if category_name in [&#39;DEMOGRAPHIC&#39;, &#39;MORTALITY&#39;]:
+                    # Each resampler will deal with one category
+                    age_resampler = AgeResampler(granularity)
+                    country_val[category_name] = age_resampler.resample(category_val)
+
+        self.dataset = self._clean_empty_entries(self.dataset)
+        self._age_groups_granularity = granularity
+
+    else:
+        logger.warning(&#34;Cannot increase age groups granularity (CURRENT: %s | RESAMPLING TO: %s). &#34;
+                        &#34;Please consider reloading the dataset and redoing this operation.&#34;
+                        % (self._age_groups_granularity, granularity))
+
+    return self</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset" href="#fairiskdata.fairisk_dataset.FAIRiskDataset">FAIRiskDataset</a></code></h4>
+<ul class="">
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.add_excess_mortality_estimation" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.add_excess_mortality_estimation">add_excess_mortality_estimation</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.export" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.export">export</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_age_group" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_age_group">filter_age_group</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_attributes" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_attributes">filter_attributes</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_attributes_with_countries_nan_below" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_attributes_with_countries_nan_below">filter_attributes_with_countries_nan_below</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_categories" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_categories">filter_categories</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries">filter_countries</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries_missing_value_attributes_below" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries_missing_value_attributes_below">filter_countries_missing_value_attributes_below</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries_with_missing_values_on_attributes" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_countries_with_missing_values_on_attributes">filter_countries_with_missing_values_on_attributes</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.filter_time_interval" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.filter_time_interval">filter_time_interval</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.get" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.get">get</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.get_attributes" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.get_attributes">get_attributes</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.get_categories" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.get_categories">get_categories</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.get_countries" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.get_countries">get_countries</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.get_interval" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.get_interval">get_interval</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.load" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.load">load</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.normalize_indicators" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.normalize_indicators">normalize_indicators</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.normalize_scores" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.normalize_scores">normalize_scores</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.resample" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.resample">resample</a></code></li>
+<li><code><a title="fairiskdata.fairisk_dataset.FAIRiskDataset.resample_age_groups" href="#fairiskdata.fairisk_dataset.FAIRiskDataset.resample_age_groups">resample_age_groups</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.1</a>.</p>
+</footer>
+</body>
+</html>
