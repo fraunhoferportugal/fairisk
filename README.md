@@ -1,3 +1,8 @@
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fairiskdata)
+![PyPI](https://img.shields.io/pypi/v/fairiskdata)
+[![Downloads](https://pepy.tech/badge/fairiskdata)](https://pepy.tech/project/fairiskdata)
+
 # FAIRisk | Improving risk estimation with open resources
 
 FAIRisk combines open-source globally available data related with risk scales and country preparedness for epidemic 
@@ -31,10 +36,15 @@ Check out our [architecture documentation](./docs/Architecture.md) for more deta
 
 ### Getting started
 
-Jump to our [getting started guide](./docs/GettingStarted.md). 
-Data exploration, visualization, and export is also possible using [our simple streamlit application](./docs/Streamlit.md).
-Also, you may read our [full documentation](./docs/index.md).
+You can install our python package using pip:
 
+```bash
+pip install fairiskdata
+```
+
+We have compiled a [sample notebook](./sample.ipynb) to demonstrate the use of the library and its methods.
+
+For additional information check the [getting started guide](./docs/GettingStarted.md) or [the full documentation](./docs/index.md).
 
 ### License
 
