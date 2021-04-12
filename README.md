@@ -2,6 +2,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fairiskdata)
 ![PyPI](https://img.shields.io/pypi/v/fairiskdata)
 [![Downloads](https://pepy.tech/badge/fairiskdata)](https://pepy.tech/project/fairiskdata)
+[![DOI](https://zenodo.org/badge/352042693.svg)](https://zenodo.org/badge/latestdoi/352042693)
 
 # FAIRisk | Improving risk estimation with open resources
 
